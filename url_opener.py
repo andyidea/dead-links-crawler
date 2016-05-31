@@ -6,9 +6,10 @@ class URLOpener():
     self.response = None
     self.valid = False
     try:
+      print "open url " + self.url
       self.response = urllib.urlopen(self.url)
+      print self.response.code
       if self.response.code == 200 :
-        print self.response.geturl()
         self.valid = True
     except:
       print "Unable to find URL"
@@ -18,3 +19,6 @@ class URLOpener():
 
   def is_valid(self):
     return self.valid
+
+  def get_url(self):
+    return self.response.geturl()

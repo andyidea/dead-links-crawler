@@ -6,4 +6,4 @@ if __name__ == '__main__':
     crawler = Crawler(url)
     print crawler.get_dead_urls()
   else: 
-    print 'URL required'
+  	crawler = Crawler("http://news.smm.cn/")

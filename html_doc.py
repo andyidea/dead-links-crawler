@@ -8,9 +8,9 @@ class LinkParser(HTMLParser):
 
  	def handle_starttag(self, tag, attrs):
  		href = [v for k,v in attrs if k.lower() == 'src']
- 		if href: self.hrefs.extend(href)
+ 		if href and href[0] != "/": self.hrefs.extend(href)
  		href = [v for k,v in attrs if k.lower() == 'href']
- 		if href: self.hrefs.extend(href)
+ 		if href and href[0] != "/": self.hrefs.extend(href)
 
 class HTMLDoc():
   def __init__(self, html_content):

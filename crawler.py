@@ -6,13 +6,15 @@ import sys
 import os
 import shutil
 
+igno_url = "new_list.php"
+
 
 class Crawler():
   def __init__(self,url):
     self.host_name = urlparse(url).hostname
     self.visited_urls = []
     self.dead_urls = []
-    self.crawl(url, "http://www.smm.cn")
+    self.crawl(url, "http://news.smm.cn/")
 
 
   def get_dead_urls(self):
@@ -22,16 +24,18 @@ class Crawler():
     if self.is_visited(url):return
     if self.is_external_url(url):return
     self.visited_urls.append(url)
-    url_opener = URLOpener(url)
+    url_opener = URLOpener(url) 
     if url_opener.is_valid():
+      if self.is_external_url(url_opener.get_url()):return
       html_content = url_opener.get_content()
       html_doc = HTMLDoc(html_content)
       links = html_doc.get_links()
       if not links: return
       for link in links: 
        if link:
-         new_url = self.get_url(link, url)
-         self.crawl(new_url, url)
+          if igno_url not in link:
+            new_url = self.get_url(link, url)
+            self.crawl(new_url, url)
       return
     else:
       print url

@@ -1,0 +1,7 @@
+http://www.smm.cn/index_login.php?referer=http://www.smm.cn/metals/liyuan,http://www.smm.cn/b2b
+http://www.smm.cn/metals/precious,http://www.smm.cn/register.php?interest=b
+http://www.smm.cn/weather.php?wid=&ename=in&mid=722396915,http://www.smm.cn/price.php?keyid=
+http://www.smm.cn/metals/manganese,http://www.smm.cn/newsinfo/1970-01-01/.html
+http://www.smm.cn/priceing.php?keyid=25,http://www.smm.cn/register.php?interest=price
+http://www.smm.cn/price.php?keyid=24,http://www.smm.cn/b2b/index.php?homepage=w060
+	
